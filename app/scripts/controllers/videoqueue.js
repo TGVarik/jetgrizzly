@@ -42,7 +42,8 @@ angular.module('jetgrizzlyApp')
                 id: id,
                 upvotes: [],
                 downvotes: [],
-                info: lodash.cloneDeep(data.snippet)
+                info: lodash.cloneDeep(data.snippet),
+                isPlaying: false
               };
             }).then(function (item) {
               return $scope.queue.$add(item);

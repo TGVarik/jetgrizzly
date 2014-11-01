@@ -205,6 +205,9 @@ module.exports = function (grunt) {
         overrides: {
           angularfire: {
             main: 'dist/angularfire.js'
+          },
+          firebase: {
+            main: 'firebase-debug.js'
           }
         }
       },
