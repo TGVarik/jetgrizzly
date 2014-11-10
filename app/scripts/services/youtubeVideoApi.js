@@ -43,8 +43,8 @@ angular.module('jetgrizzlyApp')
         maxResults: 1
       }).then(function(data){
         return data.items[0];
-      }).catch(function(){
-        return null;
+      }).catch(function(e){
+        throw e;
       })
     };
 

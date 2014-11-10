@@ -11,13 +11,13 @@ var module = angular.module('jetgrizzlyApp.Room', ['ui.router']).config(function
     }
   });
 }).controller('PlayerController', function ($scope, $window, config, playerState, $firebase) {
-  var cur = playerState
+  playerState
     .getCurrentVideoObject()
     .$loaded()
     .then(function(obj){
       if (obj.id) return obj;
       var next = $scope.queue[0];
-      if (next.id) {
+      if (next) {
         $scope.queue.$remove(next)
           .then(function (ref) {
             console.log('removed', ref)

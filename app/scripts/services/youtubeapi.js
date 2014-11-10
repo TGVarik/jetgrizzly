@@ -12,6 +12,17 @@ angular.module('jetgrizzlyApp')
     var d = $q.defer();
     // load the IFrame Player API code asynchronously
     // we can use the global document since this will only run once
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+
+    var playerApi = document.createElement('script');
+    playerApi.src = 'https://www.youtube.com/player_api';
+
+    var dataApi = document.createElement('script');
+    dataApi.src = 'https://apis.google.com/js/client.js?onload=OnLoadCallback';
+
+
+
+
     var tag = document.createElement('script');
     tag.src = 'https://www.youtube.com/player_api';
     var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -24,7 +35,7 @@ angular.module('jetgrizzlyApp')
 
     return {
       getYT: function() {
-        return d.promise; 
+        return d.promise;
       }
     };
   });
